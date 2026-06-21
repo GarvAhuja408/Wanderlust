@@ -133,8 +133,9 @@ app.use("/listings",listingRouter); //for using /listings
 app.use("/listings/:id/reviews",reviewsRouter); //for using /listings
 app.use("/users",userRouter);
 
-app.get("/", (req, res) => {
-    res.render("listings/index.ejs");
+app.get("/listings", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("listings/index", { allListings });
 });
 
 
