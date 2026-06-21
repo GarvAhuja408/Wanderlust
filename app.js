@@ -101,10 +101,6 @@ app.use(express.static(path.join(__dirname,"public"))); //to use public/css/styl
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 // const dbUrl = process.env.ATLASDB_URL;
 
-if (!dbUrl) {
-    console.error("❌ ATLASDB_URL is missing in .env file");
-    process.exit(1);
-}
 
 
 
@@ -137,9 +133,9 @@ app.use("/listings",listingRouter); //for using /listings
 app.use("/listings/:id/reviews",reviewsRouter); //for using /listings
 app.use("/",userRouter);
 
-// app.get("/",(req,res)=>{
-//     res.send("Hi i am root")
-// });
+app.get("/", (req, res) => {
+    res.render("home.ejs");
+});
 
 
 // app.get("/demouser",async(req,res)=>{
