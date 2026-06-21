@@ -131,12 +131,11 @@ main();
 
 app.use("/listings",listingRouter); //for using /listings
 app.use("/listings/:id/reviews",reviewsRouter); //for using /listings
-app.use("/users",userRouter);
+app.use("/",userRouter);
 
-app.get("/listings", async (req, res) => {
-    const allListings = await Listing.find({});
-    res.render("listings/index", { allListings });
-});
+// app.get("/",(req,res)=>{
+//     res.send("Hi i am root")
+// });
 
 
 // app.get("/demouser",async(req,res)=>{
