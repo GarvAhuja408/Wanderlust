@@ -134,7 +134,7 @@ app.use("/listings/:id/reviews",reviewsRouter); //for using /listings
 app.use("/",userRouter);
 
 app.get("/", (req, res) => {
-    res.render("home.ejs");
+    res.render("index.ejs");
 });
 
 
