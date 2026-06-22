@@ -85,7 +85,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 
@@ -100,9 +99,6 @@ app.use(express.static(path.join(__dirname,"public"))); //to use public/css/styl
 
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 // const dbUrl = process.env.ATLASDB_URL;
-
-
-
 
 async function main() {
     try {
@@ -165,6 +161,6 @@ app.use((err,req,res,next)=>{
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
 
